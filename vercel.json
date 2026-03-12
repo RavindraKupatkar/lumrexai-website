@@ -1,11 +1,14 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "version": 2,
+  "outputDirectory": ".",
+  "builds": [
+    { "src": "**/*", "use": "@vercel/static" }
+  ],
   "routes": [
-    { "src": "/(.*\\.png)", "dest": "/$1" },
-    { "src": "/(.*\\.xml)", "dest": "/$1" },
-    { "src": "/(.*\\.txt)", "dest": "/$1" },
-    { "src": "/(.*\\.ico)", "dest": "/$1" },
-    { "src": "/", "dest": "/index.html" }
+    { "src": "/og-image.png", "dest": "/og-image.png" },
+    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/favicon.png", "dest": "/favicon.png" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
