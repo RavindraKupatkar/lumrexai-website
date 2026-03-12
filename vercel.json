@@ -1,18 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml" }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [
-        { "key": "Content-Type", "value": "text/plain" }
-      ]
-    }
+  "routes": [
+    { "src": "/(.*\\.png)", "dest": "/$1" },
+    { "src": "/(.*\\.xml)", "dest": "/$1" },
+    { "src": "/(.*\\.txt)", "dest": "/$1" },
+    { "src": "/(.*\\.ico)", "dest": "/$1" },
+    { "src": "/", "dest": "/index.html" }
   ]
 }
