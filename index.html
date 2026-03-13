@@ -14,7 +14,8 @@
     <!-- ═══════════════════════════════════════════════ -->
     <link rel="canonical" href="https://lumrexai.com" />
     <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="AI document automation, regulated industry AI, document intelligence, Infylr, LumrexAI, production AI, pharma AI, finance AI, manufacturing AI, India AI startup" />
+    <meta name="keywords"
+        content="AI document automation, regulated industry AI, document intelligence, Infylr, LumrexAI, production AI, pharma AI, finance AI, manufacturing AI, India AI startup" />
     <meta name="author" content="LumrexAI Technologies" />
     <meta name="theme-color" content="#004643" />
 
@@ -24,7 +25,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lumrexai.com" />
     <meta property="og:title" content="LumrexAI Technologies — Production-Grade AI for Regulated Industries" />
-    <meta property="og:description" content="Production-grade AI for regulated industries. Finance, Pharma, Automotive, Manufacturing. Not demos — infrastructure that survives." />
+    <meta property="og:description"
+        content="Production-grade AI for regulated industries. Finance, Pharma, Automotive, Manufacturing. Not demos — infrastructure that survives." />
     <meta property="og:image" content="https://lumrexai.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -37,7 +39,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://lumrexai.com" />
     <meta name="twitter:title" content="LumrexAI Technologies — Production-Grade AI for Regulated Industries" />
-    <meta name="twitter:description" content="Production-grade AI for regulated industries. Not demos — infrastructure that survives." />
+    <meta name="twitter:description"
+        content="Production-grade AI for regulated industries. Not demos — infrastructure that survives." />
     <meta name="twitter:image" content="https://lumrexai.com/og-image.png" />
 
     <!-- ═══════════════════════════════════════════════ -->
@@ -179,7 +182,17 @@
             background: var(--cyprus-deep);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            cursor: none;
+        }
+
+        @media (pointer: fine) {
+            body {
+                cursor: none;
+            }
+
+            button,
+            a {
+                cursor: none;
+            }
         }
 
         a {
@@ -188,10 +201,16 @@
         }
 
         button {
-            cursor: none;
+            cursor: pointer;
             border: none;
             background: none;
             font-family: inherit;
+        }
+
+        @media (pointer: fine) {
+            button {
+                cursor: none;
+            }
         }
 
         strong {
@@ -495,6 +514,10 @@
             flex-direction: column;
             gap: 5px;
             padding: 8px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .nav-hamburger span {
@@ -621,11 +644,11 @@
 
         .hero-h1 {
             font-family: var(--fd);
-            font-size: clamp(52px, 7.8vw, 104px);
-            line-height: .91;
+            font-size: clamp(48px, 8vw, 92px);
+            line-height: .94;
             letter-spacing: .02em;
             color: var(--oc);
-            margin-bottom: 6px;
+            margin-bottom: 24px;
             opacity: 0;
             animation: rise .72s .16s var(--spring) forwards;
         }
@@ -647,11 +670,11 @@
         }
 
         .hero-desc {
-            font-size: 17px;
+            font-size: clamp(16px, 2vw, 18px);
             color: var(--oc2);
-            line-height: 1.8;
-            margin: 26px 0 14px;
-            max-width: 455px;
+            line-height: 1.75;
+            margin: 24px 0 32px;
+            max-width: 480px;
             opacity: 0;
             animation: rise .72s .24s var(--spring) forwards;
         }
@@ -782,6 +805,8 @@
             border-radius: 6px;
             overflow: hidden;
             box-shadow: 0 28px 72px rgba(0, 0, 0, .85), 0 0 48px rgba(0, 168, 150, .04);
+            width: 100%;
+            max-width: 100%;
         }
 
         .term-bar {
@@ -2081,6 +2106,9 @@
 
             .hero-terminal {
                 order: -1;
+                width: 100%;
+                max-width: 520px;
+                margin: 0 auto;
             }
 
             .products-grid,
@@ -2120,7 +2148,11 @@
         @media (pointer: coarse) {
 
             html,
-            body {
+            body,
+            a,
+            button,
+            .btn,
+            .nav-cta {
                 cursor: auto !important;
             }
 
@@ -2133,19 +2165,32 @@
         /* ── NAVIGATION AND TABLET (960px) ── */
         @media(max-width: 960px) {
             nav {
-                padding: 0 20px;
+                padding: 0 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+            .brand-lockup {
+                padding: 10px 0;
             }
 
             .nav-hamburger {
                 display: flex;
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
                 z-index: 1000;
                 background: transparent;
                 border: none;
-                cursor: pointer;
+                order: 3;
+                margin-left: auto;
             }
 
-            .nav-right .live-badge {
-                display: none;
+            .nav-right {
+                display: none !important;
             }
 
             .nav-links {
@@ -2219,9 +2264,14 @@
                 display: none;
             }
 
+            .stack-th {
+                padding: 10px 8px;
+            }
+
             .stack-head,
             .stack-body {
                 grid-template-columns: 1fr;
+                gap: 8px;
             }
 
             .process-nodes {
@@ -2254,6 +2304,25 @@
             .about-layout {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+
+            .letter-l,
+            .umrexai {
+                font-size: 24px !important;
+            }
+
+            .separator {
+                height: 28px !important;
+                margin: 0 12px !important;
+            }
+
+            .logo-image-wrapper {
+                width: 38px !important;
+                height: 38px !important;
+            }
+
+            .technologies {
+                display: none !important;
             }
         }
 
@@ -3097,6 +3166,8 @@
             const dot = document.getElementById('cur-dot');
             const ring = document.getElementById('cur-ring');
             if (!dot || !ring) return;
+            if (!window.matchMedia('(pointer: fine)').matches) return;
+
             let mx = 0, my = 0, rx = 0, ry = 0;
             document.addEventListener('mousemove', e => {
                 mx = e.clientX; my = e.clientY;
@@ -3440,9 +3511,11 @@
             let tabletT = 0;
 
             /* ── Input listeners ── */
-            window.addEventListener('mousemove', e => {
-                mouseX = e.clientX; mouseY = e.clientY;
-            }, { passive: true });
+            if (window.matchMedia('(pointer: fine)').matches) {
+                window.addEventListener('mousemove', e => {
+                    mouseX = e.clientX; mouseY = e.clientY;
+                }, { passive: true });
+            }
 
             LumrexScroll.add((sy) => {
                 const vel = Math.abs(sy - lastScrollY);
